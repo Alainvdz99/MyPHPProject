@@ -29,7 +29,6 @@ function showAllData(){
 }
 
 
-
 function UpdateTable() {
  global $connection;
 
