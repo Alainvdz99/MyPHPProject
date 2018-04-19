@@ -12,7 +12,6 @@ if(isset($_POST['submit'])) {
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +31,7 @@ if(isset($_POST['submit'])) {
       <div class="container">
 
      <div class="col-xs-6">
-         <form action="login.php" method="post">
+         <form action="login_update.php" method="post">
 
              <div class="form-group">
                 <label for="username">Username</label>
