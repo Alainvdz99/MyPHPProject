@@ -1,81 +1,8 @@
 <?php include "db.php"; ?>
 
-<?php
+<?php include "function_create.php"?>
 
-if(isset($_POST['submit'])) {
-    
-    
-$username =  $_POST['username'];
-$password =  $_POST['password'];
-
-
-$connection = Mysqli_connect('localhost' , 'root', '', 'loginapp'); 
-    
-    if($connection) {
-        
-    echo "we are connected";
-    } else {    
-    die("database connection failed");
-    }
-    
-    
-    $query = "INSERT INTO users(username, password)";
-    $query .= "VALUES ('$username', '$password')";
-    
-    $result = mysqli_query($connection, $query);
-    
-    
-    if(!$result) {
-        
-        die('Query FAILED' . mysqli_error());
-    }
-    
-    
-    
-//    
-//    if($username && $password ) {
-//        echo $username;  
-//        echo $password;
-//        
-//        
-//    
-//        
-//        
-//    } else {
-//        
-//        echo "Wrong shit bruh";
-//        
-//    }
-//    
-//    
-//    
-//    
-    
-
-    
-    
-}
-
-
-
-
-
-
-
-
-?>
-
-
-
-
-
-
-
-
-
-
-
-
+<?php createRows(); ?>
 
 
 
@@ -92,6 +19,7 @@ $connection = Mysqli_connect('localhost' , 'root', '', 'loginapp');
  <div class="container">
      
      <div class="col-xs-6">
+        <h1 class= "text-center">Create</h1>
          <form action="login_create.php" method="post">
              
              <div class="form-group">
@@ -109,8 +37,8 @@ $connection = Mysqli_connect('localhost' , 'root', '', 'loginapp');
              </div>
              
               <div class="form-group">
-                <label for="submit">Submit</label>
-                 <input type="submit" name="submit" class="form-control">
+                <label for="submit"></label>
+                 <input type="submit" name="submit" class="form-control" value="Create">
                  
                  
              </div>
