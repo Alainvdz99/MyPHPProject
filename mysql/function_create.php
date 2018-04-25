@@ -7,7 +7,7 @@ function createRows() {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
+        $connection = mysqli_connect('zandalain.skfl.io' , 'test_db', '1234', 'test_db');
 
         if ($connection) echo "we are connected";
         else die("database connection failed");

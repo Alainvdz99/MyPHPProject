@@ -1,7 +1,5 @@
 <?php include "db.php"; ?>
 <?php include "functions.php" ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
