@@ -52,6 +52,9 @@ $id = $_POST['id'];
 
 }
 
+/**
+ *
+ */
 function deleteRows() {
  global $connection;
 
