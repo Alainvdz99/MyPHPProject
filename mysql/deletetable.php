@@ -4,8 +4,7 @@
 <?php
 if(isset($_POST['submit'])) {
 
-    UpdateTable();
-
+    deleteRows();
 }
 
 
