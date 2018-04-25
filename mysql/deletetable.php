@@ -2,12 +2,5 @@
 <?php include "functions.php"?>
 
 <?php
-if(isset($_POST['submit'])) {
-
-    deleteRows();
-}
-
-
-
-?>
+if(isset($_POST['submit'])) deleteRows();
 

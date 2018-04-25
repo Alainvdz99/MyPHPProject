@@ -1,81 +1,65 @@
-<?php include "db.php";?>
+<?php include "db.php"; ?>
 
 <?php
 
-
-function showAllData(){
+function showAllData()
+{
     global $connection;
-
     $query = "SELECT * FROM users";
-
 
     $result = mysqli_query($connection, $query);
 
+    if (!$result) die('Query FAILED' . mysqli_error($connection));
 
-    if(!$result) {
-
-        die('Query FAILED' . mysqli_error());
+    while ($row = mysqli_fetch_assoc($result)) {
+        $id = $row['id'];
+        echo '<option value="' . $id . '">' . $id . '</option>';
     }
-
- while($row = mysqli_fetch_assoc($result))
- {
-
-                        $id = $row['id'];
-
-                                     echo '<option value="' . $id . '">' . $id . '</option>';
-
-
-                     }
-
 }
 
 
-function UpdateTable() {
- global $connection;
+function UpdateTable()
+{
+    global $connection;
 
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $id = $_POST['id'];
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-$id = $_POST['id'];
-
-    $query = "update users SET ";
-    $query .= "username = '$username', ";
-    $query .= "password = '$password' ";
-    $query .= "WHERE id = $id ";
+    $query = "
+      UPDATE users 
+      SET username = '$username', password = '$password' 
+      WHERE id = $id
+     ";
 
     $result = mysqli_query($connection, $query);
-    if(!$result) {
+    if (!$result) {
 
         die("QUERY FAILED" . mysqli_error($connection));
     }
-
-
 }
 
 /**
- *
+ * Deletes a row with the matching ID
  */
-function deleteRows() {
- global $connection;
+function deleteRows()
+{
+    global $connection;
 
-    if(isset($_POST['submit'])) {
+    if (isset($_POST['submit'])) {
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-$id = $_POST['id'];
+        $id = $_POST['id'];
 
-    $query = "Delete from users WHERE id = $id ";
+        $query = "Delete from users WHERE id = $id ";
 
-    $result = mysqli_query($connection, $query);
-    if(!$result) {
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
 
-        die("QUERY FAILED" . mysqli_error($connection));
-    }else {
-        
-        echo "record deleted";
-    }
+            die("QUERY FAILED" . mysqli_error($connection));
+        } else {
+
+            echo "record deleted";
+        }
     }
 
 }
-
-?>
