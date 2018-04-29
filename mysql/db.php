@@ -1,7 +1,7 @@
 <?php
 
 
-$connection = mysqli_connect('zandalain.skfl.io' , 'test_db', '1234', 'test_db');
+$connection = mysqli_connect('localhost' , 'root', '', 'loginapp');
 
     if(!$connection) {
 

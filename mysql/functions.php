@@ -2,6 +2,10 @@
 
 <?php
 
+/**
+* Show all data
+*/
+
 function showAllData()
 {
     global $connection;
@@ -17,6 +21,10 @@ function showAllData()
     }
 }
 
+
+/**
+* Show all data
+*/
 
 function UpdateTable()
 {
